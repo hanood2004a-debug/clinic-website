@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>عيادة الابتسامة لطب الأسنان</title>
+<meta name="description" content="عيادة أسنان شاملة: تنظيف وتبييض وتقويم وزراعة وطوارئ. باقات عناية واضحة وحجز سهل عبر واتساب.">
+<meta name="theme-color" content="#132A30">
+<meta property="og:title" content="عيادة الابتسامة لطب الأسنان">
+<meta property="og:description" content="ابتسامتك تستاهل عناية حقيقية.">
+<meta property="og:type" content="website">
+<script>document.documentElement.classList.add("js");</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Reem+Kufi:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================
+   تخصيص الهوية: غيّر الألوان والخطوط من هنا فقط
+   ألوان مأخوذة من مزاج بصري: زجاج طبي أزرق-تركواز + لمسة ذهبية دافئة
+   ========================================================== */
+:root{
+  --deep:#132A30;        /* الهيدر والفوتر وخلفية اللوحات الداكنة */
+  --ocean:#1E4A54;
+  --ocean-2:#2E6F7E;
+  --aqua:#6FC6D1;        /* زجاج فاتح: حدود وإضاءات */
+  --aqua-soft:#CFEDF0;
+  --mint:#EFF7F5;        /* خلفية الصفحة */
+  --card:#FFFFFF;
+  --gold:#C79A5C;        /* لمسة ذهبية: شارات مميزة وتقييمات */
+  --gold-deep:#8C6A38;
+  --cream:#F1E6D3;
+  --muted:#4F6A6C;
+  --line:#D9EAE6;
+  --ink:#152C2E;
+  --font-head:"Thmanyah Sans","thmanyah sans","Reem Kufi","IBM Plex Sans Arabic","Segoe UI",Tahoma,sans-serif;
+  --font-body:"Thmanyah Sans","thmanyah sans","IBM Plex Sans Arabic","Segoe UI",Tahoma,system-ui,sans-serif;
+  --maxw:1180px;
+  --r:22px; --r-lg:34px;
+  --shadow:0 1px 2px rgba(19,42,48,.06),0 14px 30px rgba(19,42,48,.09);
+  --shadow-up:0 4px 10px rgba(19,42,48,.1),0 26px 50px rgba(19,42,48,.2);
+  --nav-h:76px; --tick-h:38px; --head-h:calc(var(--nav-h) + var(--tick-h) + 14px);
+  --d:1;
+}
+[dir="ltr"]{--d:-1}
+@media (max-width:900px){:root{--nav-h:62px;--tick-h:34px;--head-h:calc(var(--nav-h) + var(--tick-h) + 10px)}}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--head-h) - 10px);-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;font-family:var(--font-body);color:var(--ink);line-height:1.75;font-size:1.0625rem;background:var(--mint)}
+h1,h2,h3,h4{font-family:var(--font-head);line-height:1.25;margin:0;font-weight:700}
+p{margin:0}
+img,svg{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+/* لون تحديد النص متوافق مع الهوية بدل الأزرق الافتراضي للمتصفح، إن حدّد أحد نصاً بالخطأ */
+::selection{background:var(--gold);color:#fff}
+/* أرقام الشارات والشريط المتحرك للعرض فقط، فلا داعي لإمكانية تحديدها كنص */
+.kpi,.ticker-item,.tk-val,.tk-label,.tk-item{-webkit-user-select:none;user-select:none}
+.wrap{width:min(100% - 2.5rem,var(--maxw));margin-inline:auto}
+
+/* ---------- الأزرار ---------- */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;padding:.85rem 1.7rem;font:600 1rem var(--font-body);border:2px solid transparent;border-radius:999px;text-decoration:none;cursor:pointer;transition:transform .15s,background-color .15s,color .15s,border-color .15s}
+.btn:active{transform:scale(.97)}
+.btn-signal{background:var(--gold);color:#fff}
+.btn-signal:hover{background:var(--gold-deep)}
+.btn-line{border-color:rgba(255,255,255,.6);color:#fff}
+.btn-line:hover{background:#fff;color:var(--deep)}
+.btn-dark{background:var(--deep);color:#fff}
+.btn-dark:hover{background:var(--ocean-2)}
+.btn-sm{padding:.55rem 1.2rem;font-size:.95rem}
+.btn-block{width:100%}
+.pulse::after{content:"";position:absolute;inset:-2px;border-radius:inherit;border:2px solid var(--gold);opacity:0;animation:ring 2.8s ease-out infinite}
+@keyframes ring{0%{opacity:.7;transform:scale(1)}70%,100%{opacity:0;transform:scale(1.22,1.5)}}
+
+/* ==========================================================
+   الهيدر: كبسولة زجاجية عائمة
+   ========================================================== */
+.site-header{position:fixed;inset-inline:0;top:14px;z-index:60;display:flex;flex-direction:column;align-items:center;gap:10px;pointer-events:none}
+.capsule{pointer-events:auto;width:min(100% - 2rem,var(--maxw));border-radius:999px;background:rgba(19,42,48,.62);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,.18);box-shadow:0 18px 40px rgba(8,20,24,.28);transition:background-color .3s,box-shadow .3s}
+.scrolled .capsule{background:rgba(19,42,48,.86)}
+.bar{display:flex;align-items:center;gap:1.4rem;height:var(--nav-h);color:#fff;padding-inline:1.4rem}
+@media (max-width:900px){.bar{padding-inline:1rem}}
+
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.brand-logo{position:relative;flex:none;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;overflow:hidden;
+  background:radial-gradient(circle at 35% 30%,var(--aqua),var(--ocean) 70%);border:1px solid rgba(255,255,255,.35);transition:transform .3s cubic-bezier(.3,.8,.3,1)}
+.brand:hover .brand-logo{transform:rotate(-8deg) scale(1.07)}
+.brand-logo img{display:block;width:100%;height:100%;object-fit:contain;padding:5px}
+.brand-logo svg{width:26px;height:26px;color:#fff}
+.brand b{display:block;font-family:var(--font-head);font-size:1.32rem;line-height:1.1}
+.brand small{display:block;font-size:.78rem;opacity:.8;line-height:1.3}
+
+.nav{position:relative;display:flex;gap:.15rem;margin-inline-start:auto}
+.nav a{position:relative;z-index:1;padding:.5rem 1rem;border-radius:999px;text-decoration:none;font-weight:500;font-size:.96rem;transition:color .2s}
+.nav a:hover{color:var(--aqua-soft)}
+.nav a.active{color:var(--deep)}
+.nav-ind{position:absolute;z-index:0;top:50%;left:0;width:0;height:36px;border-radius:999px;background:var(--gold);transform:translateY(-50%);opacity:0;
+  transition:left .38s cubic-bezier(.3,.8,.3,1),width .38s cubic-bezier(.3,.8,.3,1),opacity .2s}
+.tools{display:flex;align-items:center;gap:.6rem}
+.lang{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.4);color:inherit;padding:.4rem .8rem;border-radius:999px;font:500 .88rem var(--font-body);cursor:pointer;transition:background-color .2s}
+.lang:hover{background:rgba(255,255,255,.24)}
+.burger{display:none;background:none;border:1px solid rgba(255,255,255,.5);color:inherit;width:40px;height:36px;border-radius:999px;cursor:pointer;align-items:center;justify-content:center}
+.burger span,.burger span::before,.burger span::after{display:block;width:16px;height:2px;background:currentColor;position:relative;content:"";transition:transform .25s,top .25s}
+.burger span::before{position:absolute;top:-5px}
+.burger span::after{position:absolute;top:5px}
+.burger[aria-expanded="true"] span{background:transparent}
+.burger[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
+.burger[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
+
+/* شريط الأخبار: صف من الحبيبات الزجاجية العائمة تحت الكبسولة */
+.ticker{pointer-events:auto;width:min(100% - 2rem,var(--maxw));height:var(--tick-h);border-radius:999px;display:flex;align-items:stretch;overflow:hidden;
+  background:rgba(255,255,255,.85);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.6);box-shadow:0 10px 24px rgba(19,42,48,.12);font-size:.86rem}
+.ticker-badge{flex:none;display:flex;align-items:center;gap:.5rem;padding-inline:1rem;background:var(--deep);color:#fff;font-weight:700}
+.live-dot{width:8px;height:8px;border-radius:50%;background:var(--aqua);animation:pulse 1.6s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(111,198,209,.6)}70%,100%{box-shadow:0 0 0 8px rgba(111,198,209,0)}}
+.ticker-view{position:relative;flex:1;min-width:0;overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(to right,transparent,#000 5%,#000 95%,transparent)}
+.ticker-track{display:flex;width:max-content;height:100%;align-items:center;animation:tick var(--tick-dur,60s) linear infinite}
+.ticker:hover .ticker-track,.ticker.paused .ticker-track{animation-play-state:paused}
+@keyframes tick{to{transform:translateX(calc(var(--d) * 50%))}}
+.tk-group{display:flex;flex:none;align-items:center}
+.tk-item{display:inline-flex;align-items:baseline;gap:.5rem;white-space:nowrap;color:var(--ink)}
+.tk-item::after{content:"";align-self:center;width:5px;height:5px;margin-inline:1.3rem;background:var(--gold);border-radius:50%}
+.tk-label{color:var(--muted)}
+.tk-val{font-family:var(--font-head);font-size:1rem;color:var(--ocean)}
+.tk-val small{font-family:var(--font-body);font-size:.76rem;font-weight:500;color:var(--muted)}
+.tick-toggle{flex:none;width:40px;display:grid;place-items:center;background:transparent;border:0;border-inline-start:1px solid var(--line);color:var(--muted);cursor:pointer}
+.tick-toggle:hover{background:var(--mint)}
+.tick-toggle svg{width:13px;height:13px;fill:currentColor}
+.tick-toggle .i-play{display:none}
+.ticker.paused .tick-toggle .i-play{display:block}
+.ticker.paused .tick-toggle .i-pause{display:none}
+@media (prefers-reduced-motion:reduce){.ticker-track{animation:none}.ticker-view{overflow-x:auto}.pulse,.live-dot{animation:none}}
+
+@media (max-width:900px){
+  .tools{margin-inline-start:auto}
+  .tools .btn{display:none}
+  .burger{display:inline-flex}
+  .brand small{display:none}
+  .nav{position:fixed;top:calc(var(--head-h) + 4px);inset-inline:1rem;margin:0;flex-direction:column;gap:0;padding:.5rem 1rem 1rem;border-radius:var(--r);
+    background:rgba(19,42,48,.97);box-shadow:0 20px 40px rgba(0,0,0,.35);visibility:hidden;opacity:0;transform:translateY(-10px);transition:opacity .25s,transform .25s,visibility .25s}
+  .nav.open{visibility:visible;opacity:1;transform:none}
+  .nav a{padding:.9rem .4rem;border-radius:0;border-bottom:1px solid rgba(255,255,255,.1)}
+  .nav a.active{color:var(--gold);background:none}
+  .nav-ind{display:none}
+}
+
+/* ==========================================================
+   الواجهة الرئيسية: عدسة مرآة زجاجية دائرية
+   ========================================================== */
+.hero{position:relative;isolation:isolate;color:#fff;background:radial-gradient(120% 90% at 78% -10%,var(--ocean-2),var(--ocean) 45%,var(--deep) 100%);
+  padding:calc(var(--head-h) + clamp(2rem,5vw,3.5rem)) 0 0;overflow:hidden}
+.hero>.wrap{position:relative;z-index:1}
+.hero::before{content:"";position:absolute;inset:0;z-index:0;opacity:.5;
+  background-image:radial-gradient(rgba(255,255,255,.09) 1.5px,transparent 1.5px);background-size:30px 30px;
+  -webkit-mask-image:radial-gradient(120% 100% at 78% 0%,#000,transparent 70%);mask-image:radial-gradient(120% 100% at 78% 0%,#000,transparent 70%)}
+.hero::after{content:"";position:absolute;inset-inline:0;bottom:0;height:min(240px,40%);z-index:0;pointer-events:none;
+  background:linear-gradient(to bottom,rgba(19,42,48,0),var(--mint) 96%)}
+.chip{position:absolute;z-index:0;border-radius:16px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:2rem;align-items:center}
+.hero h1{font-size:clamp(2.2rem,5vw,3.9rem);max-width:15em}
+.hero-sub{margin-top:1.15rem;max-width:33rem;font-size:1.12rem;color:rgba(255,255,255,.85)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:1.9rem}
+.hero-trust{display:flex;align-items:center;gap:.6rem;margin-top:1.5rem;color:rgba(255,255,255,.82);font-size:.94rem}
+.hero-trust .stars{display:flex;gap:.15rem}
+.hero-trust svg{width:15px;height:15px;fill:var(--gold)}
+
+/* عدسة المرآة: دائرة زجاجية بانعكاس، والسنّة تتوهج بالداخل */
+.lens-wrap{position:relative;isolation:isolate;aspect-ratio:1/1;width:min(100%,440px);margin-inline:auto;
+  filter:drop-shadow(0 26px 40px rgba(8,20,24,.45))}
+/* الفتحة على شكل سنّة: القناع مُعرَّف مرة واحدة في <clipPath id="toothClip"> أول الصفحة،
+   بإحداثيات نسبية (objectBoundingBox) فيتمدد مع أي حجم بدون تشويه */
+.lens{position:absolute;inset:6%;clip-path:url(#toothClip);
+  background:radial-gradient(circle at 32% 22%,rgba(255,255,255,.6),rgba(255,255,255,.08) 45%,rgba(255,255,255,.03) 75%);overflow:hidden}
+.lens::before{content:"";position:absolute;inset:0;background:conic-gradient(from 200deg,rgba(255,255,255,.4),transparent 30%,transparent 70%,rgba(255,255,255,.18));mix-blend-mode:screen}
+/* شعاع ضوئي يمر داخل فتحة السنّة، كأنها زجاج حقيقي ينعكس عليه الضوء */
+.lens::after{content:"";position:absolute;inset:-20% -60%;
+  background:linear-gradient(75deg,transparent 40%,rgba(255,255,255,.5) 48%,rgba(255,255,255,.12) 52%,transparent 60%);
+  animation:sheen 4.5s ease-in-out infinite}
+@keyframes sheen{0%,15%{transform:translateX(-60%)}55%,100%{transform:translateX(60%)}}
+@media (prefers-reduced-motion:reduce){.lens::after{animation:none;display:none}}
+.lens-tooth{position:absolute;inset:0;display:grid;place-items:center}
+.lens-tooth svg{width:52%;height:52%;filter:drop-shadow(0 8px 16px rgba(8,20,24,.35))}
+/* حلقات مدارية زخرفية حول الفتحة، تبقى دائرية لتباين مع شكل السنّة الحاد */
+.orbit{position:absolute;inset:0;border-radius:50%;border:1px dashed rgba(255,255,255,.28)}
+.orbit-1{inset:-9%}
+.orbit-2{inset:-18%;animation:spin 40s linear infinite}
+@media (prefers-reduced-motion:reduce){.orbit-2{animation:none}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.handle{position:absolute;width:14px;height:130px;left:50%;bottom:-9%;translate:-50% 0;border-radius:8px;
+  background:linear-gradient(180deg,#EDEDED,#B9C2C4 55%,#8C979A);box-shadow:0 8px 16px rgba(8,20,24,.3);transform-origin:top center;transform:rotate(28deg)}
+.badge-mini{position:absolute;display:flex;align-items:center;gap:.5rem;padding:.5rem .85rem;border-radius:999px;background:rgba(255,255,255,.94);color:var(--ink);
+  font-size:.82rem;font-weight:600;box-shadow:var(--shadow-up)}
+.badge-mini svg{width:16px;height:16px;flex:none}
+.b1{top:6%;left:-6%}
+.b2{bottom:14%;right:-8%}
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .lens-wrap{order:-1;max-width:300px}
+  .chip{display:none}
+}
+
+.kpi-row{display:flex;flex-wrap:wrap;gap:.9rem;margin:clamp(2.5rem,5vw,3.5rem) 0 -2.75rem;position:relative;z-index:3}
+.kpi{flex:1 1 200px;display:flex;align-items:center;gap:.9rem;padding:1rem 1.3rem;border-radius:999px;color:var(--ink);background:#fff;box-shadow:var(--shadow-up)}
+.kpi-ic{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--aqua-soft);color:var(--ocean)}
+.kpi-ic svg{width:22px;height:22px}
+.kpi-val{display:block;font-family:var(--font-head);font-size:1.28rem;font-weight:700;color:var(--ocean)}
+.kpi-l{display:block;font-size:.85rem;color:var(--muted)}
+
+/* ==========================================================
+   لغة موحّدة للأقسام
+   ========================================================== */
+.section{padding-block:clamp(3.5rem,8vw,6rem)}
+.section.tint{background:linear-gradient(180deg,rgba(111,198,209,.14),rgba(111,198,209,.02))}
+section[id]{scroll-margin-top:calc(var(--head-h) - 6px)}
+.sec-head{max-width:42rem;margin-bottom:2.5rem}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;padding:.35rem .9rem;border-radius:999px;background:var(--aqua-soft);color:var(--ocean);font-weight:700;font-size:.85rem;margin-bottom:1rem}
+.eyebrow svg{width:14px;height:14px}
+.statement{font-size:clamp(1.85rem,4.2vw,3rem);line-height:1.25}
+.lead{margin-top:.85rem;color:var(--muted);font-size:1.1rem}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow-up);border-color:var(--aqua)}
+.card{transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s,border-color .3s}
+
+.js .reveal{opacity:0;translate:0 24px;
+  transition:opacity .7s ease var(--d,0ms),translate .7s cubic-bezier(.2,.7,.2,1) var(--d,0ms),transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s,border-color .3s}
+.js .reveal.in{opacity:1;translate:none}
+@media (prefers-reduced-motion:reduce){.js .reveal{opacity:1;translate:none;transition:none}}
+.js .draw :is(path,rect,circle,line,polyline,polygon,ellipse){stroke-dasharray:1;stroke-dashoffset:1}
+.js .draw.in :is(path,rect,circle,line,polyline,polygon,ellipse){animation:draw 1.3s cubic-bezier(.6,.1,.2,1) forwards;animation-delay:calc(var(--k,0) * 80ms + 150ms)}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.js .draw :is(path,rect,circle,line,polyline,polygon,ellipse){stroke-dasharray:none;stroke-dashoffset:0;animation:none!important}}
+
+/* ---------- دائرة العناية: عناقيد زجاجية متراكبة ---------- */
+.cluster-wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,6vw,4rem);align-items:center}
+.cluster{position:relative;aspect-ratio:1/1;max-width:420px}
+/* أهم إصلاح: aspect-ratio يجعل الارتفاع محسوباً من العرض دائماً، فلا يعتمد على حجم الخط
+   أو تحميل الأيقونة — قبل هذا التصحيح كانت الفقاعة تكبر بلا حدود وتغطي البقيتين
+   إن تأخر تحميل الخط أو حسبت الأيقونة نسبتها من ارتفاع غير محدَّد (bug فعلي تم رصده وإصلاحه) */
+.bubble{position:absolute;aspect-ratio:1/1;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;
+  background:radial-gradient(circle at 32% 28%,var(--ocean-2),var(--deep) 75%);box-shadow:var(--shadow-up);border:1px solid rgba(255,255,255,.25);padding:8% 6%;overflow:hidden}
+.bubble svg{flex:none;width:28%;height:auto;margin-bottom:.4rem}
+.bubble span{flex:none;font-weight:700;font-size:clamp(.68rem,2.4vw,.92rem);line-height:1.2}
+.bu1{width:58%;top:0;left:8%}
+.bu2{width:46%;bottom:2%;right:0;background:radial-gradient(circle at 32% 28%,var(--gold),var(--gold-deep) 75%)}
+.bu3{width:38%;bottom:0;left:0;background:radial-gradient(circle at 32% 28%,var(--aqua),var(--ocean) 75%)}
+.cluster-copy .btn{margin-top:1.6rem}
+.tri{list-style:none;margin:1.6rem 0 0;padding:0;display:grid;gap:.7rem}
+.tri li{display:flex;align-items:center;gap:.7rem;font-weight:500}
+.tri li svg{flex:none;width:20px;height:20px;color:var(--gold)}
+@media (max-width:800px){.cluster-wrap{grid-template-columns:1fr}.cluster{width:min(100%,300px);margin-inline:auto}}
+
+/* ---------- الخدمات: بطاقات بشارة دائرية ---------- */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.svc{padding:1.7rem;display:flex;flex-direction:column;gap:.8rem;position:relative;overflow:hidden}
+.svc::before{content:"";position:absolute;top:-30%;inset-inline-end:-20%;width:60%;aspect-ratio:1/1;border-radius:50%;background:var(--aqua-soft);opacity:.6;z-index:0}
+.svc>*{position:relative;z-index:1}
+.svc-icon{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:#fff;border:1.5px solid var(--aqua);color:var(--ocean);box-shadow:var(--shadow)}
+.svc-icon svg{width:28px;height:28px}
+.svc h3{font-size:1.3rem}
+.svc p{flex:1;color:var(--muted)}
+.svc-foot{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-top:.9rem;border-top:1px dashed var(--line)}
+.tag{display:inline-flex;align-items:center;padding:.3rem .85rem;border-radius:999px;background:var(--mint);color:var(--muted);font-weight:600;font-size:.86rem}
+.link{font-weight:700;color:var(--ocean);text-decoration:none;display:inline-flex;align-items:center;gap:.3rem}
+.link svg{width:15px;height:15px;transition:transform .2s}
+.link:hover svg{transform:translateX(calc(-3px * var(--d,1)))}
+@media (max-width:900px){.svc-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.svc-grid{grid-template-columns:1fr}}
+
+/* ---------- باقات العناية: بطاقات أسعار ---------- */
+.plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;align-items:stretch}
+.plan{padding:1.9rem 1.6rem;display:flex;flex-direction:column;gap:1.1rem;position:relative}
+.plan.pop{background:var(--deep);color:#fff;border-color:var(--deep);transform:scale(1.04)}
+.plan.pop:hover{transform:scale(1.04) translateY(-6px)}
+.ribbon{position:absolute;top:-.85rem;inset-inline-start:50%;translate:-50% 0;background:var(--gold);color:#fff;font-size:.8rem;font-weight:700;padding:.35rem 1rem;border-radius:999px;white-space:nowrap}
+[dir="ltr"] .ribbon{translate:-50% 0}
+.plan h3{font-size:1.25rem}
+.plan .price{display:flex;align-items:baseline;gap:.4rem}
+.plan .price b{font-family:var(--font-head);font-size:2.2rem}
+.plan .price span{color:var(--muted);font-size:.92rem}
+.plan.pop .price span{color:rgba(255,255,255,.7)}
+.plan ul{list-style:none;margin:0;padding:0;display:grid;gap:.6rem;flex:1}
+.plan li{display:flex;align-items:center;gap:.6rem;font-size:.96rem}
+.plan li svg{flex:none;width:17px;height:17px;color:var(--gold)}
+@media (max-width:900px){.plan-grid{grid-template-columns:1fr}.plan.pop{transform:none}.plan.pop:hover{transform:translateY(-6px)}}
+
+/* ---------- الأطباء: كروت هوية بشريط جانبي ---------- */
+.doc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.doc{display:flex;align-items:center;gap:1rem;padding:1.2rem}
+.doc-pic{flex:none;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 32% 28%,var(--ocean-2),var(--deep) 75%);color:#fff}
+.doc-pic svg{width:60%;height:60%}
+.doc h3{font-size:1.08rem}
+.doc .role{color:var(--gold-deep);font-weight:600;font-size:.9rem;margin-top:.1rem}
+.doc .yrs{color:var(--muted);font-size:.85rem;margin-top:.2rem}
+@media (max-width:800px){.doc-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.doc-grid{grid-template-columns:1fr}}
+
+/* ---------- خطوات الزيارة: سلسلة إشعارات ---------- */
+.chat{max-width:560px;margin-inline:auto;display:grid;gap:1rem}
+.bub{display:flex;align-items:center;gap:1rem;padding:1.1rem 1.3rem}
+.bub .tick{flex:none;width:34px;height:34px;border-radius:50%;background:var(--mint);border:2px solid var(--aqua);display:grid;place-items:center;color:var(--ocean)}
+.bub.done .tick{background:var(--gold);border-color:var(--gold);color:#fff}
+.bub .tick svg{width:16px;height:16px}
+.bub b{display:block;font-size:1.05rem}
+.bub span{color:var(--muted);font-size:.92rem}
+.bub time{margin-inline-start:auto;color:var(--muted);font-size:.8rem;flex:none}
+
+/* ---------- آراء المرضى ---------- */
+.reviews-panel{position:relative;overflow:hidden;color:#fff;background:radial-gradient(120% 100% at 20% 0%,var(--ocean-2),var(--deep) 60%);border-radius:var(--r-lg);padding:clamp(1.5rem,5vw,3.5rem);box-shadow:var(--shadow-up)}
+.reviews-panel .lead{color:rgba(255,255,255,.78)}
+.quotes{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+.quote{margin:0;padding:1.6rem 1.6rem 1.5rem;border-radius:var(--r);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);display:flex;flex-direction:column;gap:.9rem}
+.quote:hover{transform:translateY(-6px);border-color:var(--gold);background:rgba(255,255,255,.12)}
+.qtop{display:flex;align-items:center;gap:.7rem}
+.avatar{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--gold);color:#fff;font-weight:700;flex:none}
+.stars{display:flex;gap:.2rem}
+.stars svg{width:16px;height:16px;fill:var(--gold)}
+.js .stars svg{opacity:.2;transform:scale(.5)}
+.js .in .stars svg{animation:pop .5s cubic-bezier(.3,1.6,.5,1) forwards;animation-delay:calc(var(--k,0) * 90ms + 350ms)}
+@keyframes pop{to{opacity:1;transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.js .stars svg{opacity:1;transform:none;animation:none!important}}
+.quote p{font-size:1.1rem;line-height:1.75}
+@media (max-width:800px){.quotes{grid-template-columns:1fr}}
+
+/* ---------- شريط ذهبي: عرض مميز ---------- */
+.offer{position:relative;overflow:hidden;border-radius:var(--r-lg);padding:clamp(2rem,5vw,3rem);color:#fff;
+  background:radial-gradient(120% 140% at 85% 0%,var(--gold),var(--gold-deep) 55%,#5C441F 100%);box-shadow:var(--shadow-up);
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem}
+.offer::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.14) 1.5px,transparent 1.5px);background-size:26px 26px}
+.offer>*{position:relative;z-index:1}
+.offer h2{font-size:clamp(1.5rem,3.2vw,2.2rem);max-width:26rem}
+.offer p{margin-top:.5rem;color:rgba(255,255,255,.9)}
+.offer .btn{background:#fff;color:var(--gold-deep)}
+.offer .btn:hover{background:var(--deep);color:#fff}
+
+/* ---------- الموقع وساعات العمل ---------- */
+.loc-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,6vw,4.5rem);align-items:center}
+.loc-fig{position:relative;margin:0;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/3;background:radial-gradient(120% 100% at 30% 20%,var(--ocean-2),var(--deep) 70%);box-shadow:var(--shadow-up)}
+.loc-fig::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.1) 1.5px,transparent 1.5px);background-size:24px 24px}
+.pin{position:absolute;left:50%;top:52%;width:clamp(50px,8vw,74px);height:auto;z-index:2;transform:translate(-50%,-90%);filter:drop-shadow(0 6px 6px rgba(0,0,0,.35));animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translate(-50%,-98%)}}
+@media (prefers-reduced-motion:reduce){.pin{animation:none}}
+.ring{position:absolute;left:50%;top:52%;translate:-50% -50%;border-radius:50%;border:1.5px dashed rgba(255,255,255,.4)}
+.ring1{width:40%;aspect-ratio:1/1}
+.ring2{width:62%;aspect-ratio:1/1;animation:spin 50s linear infinite}
+@media (prefers-reduced-motion:reduce){.ring2{animation:none}}
+.loc-copy .btn{margin-top:1.6rem}
+.hours{list-style:none;margin:.5rem 0 0;padding:0;border-top:1px solid var(--line)}
+.hours li{display:flex;justify-content:space-between;padding:.6rem .1rem;border-bottom:1px solid var(--line);font-size:.98rem}
+.areas-h{margin-top:1.7rem;color:var(--muted);font-size:.95rem}
+@media (max-width:800px){.loc-grid{grid-template-columns:1fr}.loc-fig{order:-1}}
+
+/* ---------- الحجز ---------- */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(1.25rem,4vw,2.5rem);align-items:start}
+.info{margin:0;padding:.5rem 1.5rem}
+.info>div{display:grid;grid-template-columns:7rem 1fr;gap:1rem;padding:.95rem 0;border-bottom:1px solid var(--line)}
+.info>div:last-child{border-bottom:0}
+.info dt{color:var(--muted);font-size:.95rem}
+.info dd{margin:0;font-weight:500}
+.info a{text-decoration-color:var(--gold);text-decoration-thickness:2px;text-underline-offset:4px}
+.form{display:grid;gap:1.1rem;padding:clamp(1.25rem,3vw,2rem)}
+.field{display:grid;gap:.35rem}
+.field label{font-weight:600;font-size:.98rem}
+.field input,.field select,.field textarea{width:100%;font:inherit;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:.75rem .9rem;transition:border-color .2s,box-shadow .2s}
+.field textarea{min-height:110px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:0;border-color:var(--gold);box-shadow:0 0 0 4px rgba(199,154,92,.22)}
+.form-note{font-size:.92rem;color:var(--muted)}
+@media (max-width:800px){.contact-grid{grid-template-columns:1fr}}
+
+
+/* ---------- هوفر زجاجي موحّد: شعاع ضوء يمر + زجاج ضبابي عند التمرير ----------
+   يُطبَّق كطبقة خلفية إضافية فوق أي لون خلفية موجود مسبقاً، فلا يكسر ألوان البطاقات */
+:is(.card,.kpi,.quote,.bub,.doc,.svc,.plan){
+  position:relative;
+  background-repeat:no-repeat;
+  background-image:linear-gradient(115deg,transparent 22%,rgba(255,255,255,.7) 42%,rgba(255,255,255,.22) 50%,transparent 64%);
+  background-size:240% 240%;
+  background-position:-170% -170%;
+  transition:background-position .85s cubic-bezier(.2,.7,.2,1),transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s,border-color .3s,backdrop-filter .3s;
+}
+:is(.card,.kpi,.quote,.bub,.doc,.svc,.plan):hover{
+  background-position:170% 170%;
+  -webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);
+}
+.plan.pop{background-image:linear-gradient(115deg,transparent 24%,rgba(255,255,255,.16) 42%,rgba(255,255,255,.05) 50%,transparent 62%)}
+@media (prefers-reduced-motion:reduce){
+  :is(.card,.kpi,.quote,.bub,.doc,.svc,.plan){transition:box-shadow .3s,border-color .3s}
+  :is(.card,.kpi,.quote,.bub,.doc,.svc,.plan):hover{background-position:-170% -170%;backdrop-filter:none;-webkit-backdrop-filter:none}
+}
+
+/* ---------- الفوتر + واتساب ---------- */
+.footer{background:var(--deep);color:rgba(255,255,255,.85);padding-block:1.9rem;font-size:.95rem;border-radius:var(--r-lg) var(--r-lg) 0 0}
+.footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.75rem 2rem}
+.footer a{text-decoration-color:var(--gold);text-underline-offset:4px}
+.wa-float{position:fixed;inset-block-end:1.25rem;inset-inline-end:1.25rem;z-index:40;background:#25D366;color:#06210F;font-weight:600;text-decoration:none;padding:.7rem 1.15rem;border-radius:999px;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+.wa-float:hover{background:#3BE07A}
+</style>
+</head>
+
+<body id="top">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <clipPath id="toothClip" clipPathUnits="objectBoundingBox">
+    <path d="M0.5 0.125c-0.08333 0-0.125 0.05417-0.19583 0.05417C0.20833 0.17917 0.1375 0.2625 0.1375 0.375c0 0.16667 0.08333 0.41667 0.16667 0.41667 0.05833 0 0.05833-0.1125 0.1125-0.1125h0.16667c0.05417 0 0.05417 0.1125 0.1125 0.1125 0.08333 0 0.16667-0.25 0.16667-0.41667 0-0.1125-0.07083-0.19583-0.16667-0.19583C0.625 0.17917 0.58333 0.125 0.5 0.125z"/>
+  </clipPath>
+  <symbol id="mark" viewBox="0 0 34 34">
+    <path d="M17 4c-3 0-4.5 2-7 2-3.5 0-5.5 3-5.5 7 0 6 3 15 6 15 2 0 2-4 4-4h5c2 0 2 4 4 4 3 0 6-9 6-15 0-4-2-7-5.5-7-2.5 0-4-2-7-2z" fill="none" stroke="currentColor" stroke-width="2"/>
+  </symbol>
+  <symbol id="i-tooth" viewBox="0 0 24 24"><path d="M12 3c-2 0-3 1.3-4.7 1.3C5 4.3 3.3 6.3 3.3 9c0 4 2 10 4 10 1.4 0 1.4-2.7 2.7-2.7h4c1.3 0 1.3 2.7 2.7 2.7 2 0 4-6 4-10 0-2.7-1.7-4.7-4-4.7C15 4.3 14 3 12 3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3.5 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+  <symbol id="i-brace" viewBox="0 0 24 24"><path d="M4 9h16M6 9v3a6 6 0 0012 0V9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8" cy="9" r="1.1" fill="currentColor"/><circle cx="12" cy="9" r="1.1" fill="currentColor"/><circle cx="16" cy="9" r="1.1" fill="currentColor"/></symbol>
+  <symbol id="i-implant" viewBox="0 0 24 24"><path d="M12 3v4M9 6h6M12 7v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M9 12h6l-1 8H10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  <symbol id="i-emg" viewBox="0 0 24 24"><path d="M12 3C7 3 3 7 3 11c0 6 5 10 9 11 4-1 9-5 9-11 0-4-4-8-9-8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 8v5l3 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+</svg>
+
+<a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" data-i18n="wa.float">واتساب</a>
+
+<!-- ================= الهيدر: كبسولة عائمة + شريط أرقام ================= -->
+<header class="site-header" id="siteHeader">
+  <div class="capsule">
+    <div class="wrap bar" style="width:100%;margin:0;padding:0">
+      <a class="brand" href="#top" aria-label="عيادة الابتسامة">
+        <span class="brand-logo" id="brandLogo">
+          <img id="brandImg" alt="" width="46" height="46" hidden>
+          <svg id="brandMark" viewBox="0 0 34 34" aria-hidden="true"><use href="#mark"/></svg>
+        </span>
+        <span><b data-i18n="brand.name">الابتسامة</b><small data-i18n="brand.sub">لطب الأسنان</small></span>
+      </a>
+      <nav class="nav" id="nav" aria-label="القائمة الرئيسية" data-i18n-aria="nav.label">
+        <span class="nav-ind" id="navInd" aria-hidden="true"></span>
+        <a href="#services" data-nav="services" data-i18n="nav.services">الخدمات</a>
+        <a href="#plans" data-nav="plans" data-i18n="nav.plans">الباقات</a>
+        <a href="#doctors" data-nav="doctors" data-i18n="nav.doctors">الأطباء</a>
+        <a href="#reviews" data-nav="reviews" data-i18n="nav.reviews">آراء المرضى</a>
+        <a href="#booking" data-nav="booking" data-i18n="nav.booking">احجز موعد</a>
+      </nav>
+      <div class="tools">
+        <button class="lang" id="lang" type="button" aria-label="English">EN</button>
+        <a class="btn btn-signal btn-sm pulse" href="#booking" data-i18n="cta.book">احجز موعدك</a>
+        <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="القائمة"><span></span></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker" id="ticker" role="region" aria-label="أرقامنا" data-i18n-aria="tk.aria">
+    <div class="ticker-badge"><span class="live-dot" aria-hidden="true"></span><b data-i18n="tk.label">أرقامنا</b></div>
+    <div class="ticker-view" id="tickerView"><div class="ticker-track" id="tickerTrack"></div></div>
+    <button class="tick-toggle" id="tickToggle" type="button" aria-pressed="false" aria-label="إيقاف الحركة">
+      <svg class="i-pause" viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="1" width="3.5" height="12" rx="1"/><rect x="8.5" y="1" width="3.5" height="12" rx="1"/></svg>
+      <svg class="i-play" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= الواجهة الرئيسية ================= -->
+<section class="hero">
+  <span class="chip" style="width:70px;height:70px;top:14%;left:6%;transform:rotate(12deg)" aria-hidden="true"></span>
+  <span class="chip" style="width:44px;height:44px;top:62%;left:2%;transform:rotate(-8deg)" aria-hidden="true"></span>
+  <span class="chip" style="width:54px;height:54px;top:8%;right:34%;transform:rotate(-14deg)" aria-hidden="true"></span>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow" style="background:rgba(255,255,255,.12);color:#fff"><svg><use href="#i-spark"/></svg><span data-i18n="hero.eyebrow">عيادة معتمدة منذ 2014</span></span>
+        <h1 data-i18n="hero.title">ابتسامتك تستاهل عناية حقيقية</h1>
+        <p class="hero-sub" data-i18n="hero.sub">تنظيف وتبييض وتقويم وزراعة أسنان بأحدث الأجهزة، وفريق يشرح لك كل خطوة قبل أن يبدأ.</p>
+        <div class="hero-actions">
+          <a class="btn btn-signal" href="#booking" data-i18n="cta.book">احجز موعدك</a>
+          <a class="btn btn-line" href="#services" data-i18n="hero.cta2">تصفّح الخدمات</a>
+        </div>
+        <div class="hero-trust">
+          <span class="stars" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17l-6.1 3.4 1.5-6.8L2.2 9l6.9-.7z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17l-6.1 3.4 1.5-6.8L2.2 9l6.9-.7z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17l-6.1 3.4 1.5-6.8L2.2 9l6.9-.7z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17l-6.1 3.4 1.5-6.8L2.2 9l6.9-.7z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17l-6.1 3.4 1.5-6.8L2.2 9l6.9-.7z"/></svg>
+          </span>
+          <span data-i18n="hero.trust">تقييم 4.9 من مرضى حقيقيين</span>
+        </div>
+      </div>
+
+      <div class="lens-wrap">
+        <span class="orbit orbit-2" aria-hidden="true"></span>
+        <span class="orbit orbit-1" aria-hidden="true"></span>
+        <span class="handle" aria-hidden="true"></span>
+        <div class="lens">
+          <div class="lens-tooth"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-tooth"/></svg></div>
+        </div>
+        <span class="badge-mini b1"><svg viewBox="0 0 24 24" fill="none" stroke="var(--ocean)" stroke-width="1.8"><use href="#i-shield"/></svg><span data-i18n="hero.b1">تعقيم كامل</span></span>
+        <span class="badge-mini b2"><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold-deep)" stroke-width="1.8"><use href="#i-spark"/></svg><span data-i18n="hero.b2">بلا ألم</span></span>
+      </div>
+    </div>
+
+    <div class="kpi-row">
+      <div class="kpi reveal"><span class="kpi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><use href="#i-user"/></svg></span><span><span class="kpi-val count" data-i18n="f1.v">+9,300</span><span class="kpi-l" data-i18n="f1.l">مريض عولج</span></span></div>
+      <div class="kpi reveal"><span class="kpi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><use href="#i-tooth"/></svg></span><span><span class="kpi-val" data-i18n="f2.v">6 أطباء</span><span class="kpi-l" data-i18n="f2.l">فريق متخصص</span></span></div>
+      <div class="kpi reveal"><span class="kpi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><use href="#i-shield"/></svg></span><span><span class="kpi-val" data-i18n="f3.v">98%</span><span class="kpi-l" data-i18n="f3.l">رضا المرضى</span></span></div>
+      <div class="kpi reveal"><span class="kpi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><use href="#i-emg"/></svg></span><span><span class="kpi-val" data-i18n="f4.v">24/7</span><span class="kpi-l" data-i18n="f4.l">طوارئ</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= دائرة العناية المتكاملة ================= -->
+<section class="section" id="system" data-nav="" style="padding-top:calc(3.25rem + clamp(2rem,5vw,3.5rem))">
+  <div class="wrap cluster-wrap">
+    <div class="cluster reveal">
+      <div class="bubble bu1"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><use href="#i-tooth"/></svg><span data-i18n="cl.b1">عناية يومية</span></div>
+      <div class="bubble bu2"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><use href="#i-spark"/></svg><span data-i18n="cl.b2">تجميل</span></div>
+      <div class="bubble bu3"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><use href="#i-shield"/></svg><span data-i18n="cl.b3">علاج</span></div>
+    </div>
+    <div class="cluster-copy">
+      <span class="eyebrow"><svg><use href="#i-spark"/></svg><span data-i18n="sys.eyebrow">منظومة عناية</span></span>
+      <h2 class="statement reveal"><span data-i18n="sys.t2">كل احتياجات أسنانك في دائرة واحدة</span></h2>
+      <p class="lead reveal" data-i18n="sys.lead">من الفحص الدوري إلى الزراعة والتقويم، فريق واحد يتابعك بخطة علاج واضحة من أول زيارة.</p>
+      <ul class="tri">
+        <li class="reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"/></svg><span data-i18n="tri1">تشخيص دقيق بأشعة رقمية</span></li>
+        <li class="reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"/></svg><span data-i18n="tri2">خطة علاج مكتوبة قبل البدء</span></li>
+        <li class="reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"/></svg><span data-i18n="tri3">متابعة بعد كل إجراء</span></li>
+      </ul>
+      <a class="btn btn-dark reveal" href="#services" data-i18n="sys.btn">اكتشف الخدمات</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= الخدمات ================= -->
+<section class="section tint" id="services" data-nav="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><svg><use href="#i-tooth"/></svg><span data-i18n="services.eyebrow">خدماتنا</span></span>
+      <h2 class="statement" data-i18n="services.t2">كل ما تحتاجه أسنانك بخطة واضحة</h2>
+      <p class="lead" data-i18n="services.lead">اختر الخدمة التي تحتاجها ونحدد لك موعد فحص أولي مجاني.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="card reveal svc">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><use href="#i-tooth"/></svg></div>
+        <h3 data-i18n="s1.t">تنظيف وفحص دوري</h3>
+        <p data-i18n="s1.d">إزالة الجير وتلميع وفحص شامل مرتين بالسنة.</p>
+        <div class="svc-foot"><span class="tag" data-i18n="s1.m">30 – 45 دقيقة</span><a class="link" href="#booking" data-service="1"><span data-i18n="s.order">احجز</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-arrow"/></svg></a></div>
+      </article>
+      <article class="card reveal svc">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><use href="#i-spark"/></svg></div>
+        <h3 data-i18n="s2.t">تبييض الأسنان</h3>
+        <p data-i18n="s2.d">تبييض آمن بالعيادة أو بطقم منزلي بإشراف الطبيب.</p>
+        <div class="svc-foot"><span class="tag" data-i18n="s2.m">جلسة – أسبوعين</span><a class="link" href="#booking" data-service="2"><span data-i18n="s.order">احجز</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-arrow"/></svg></a></div>
+      </article>
+      <article class="card reveal svc">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><use href="#i-brace"/></svg></div>
+        <h3 data-i18n="s3.t">تقويم الأسنان</h3>
+        <p data-i18n="s3.d">تقويم معدني أو شفاف حسب حالتك، بمتابعة شهرية.</p>
+        <div class="svc-foot"><span class="tag" data-i18n="s3.m">12 – 24 شهراً</span><a class="link" href="#booking" data-service="3"><span data-i18n="s.order">احجز</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-arrow"/></svg></a></div>
+      </article>
+      <article class="card reveal svc">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><use href="#i-implant"/></svg></div>
+        <h3 data-i18n="s4.t">زراعة الأسنان</h3>
+        <p data-i18n="s4.d">زراعة بديلة للسنّ المفقودة بضمان مكتوب.</p>
+        <div class="svc-foot"><span class="tag" data-i18n="s4.m">3 – 6 أشهر</span><a class="link" href="#booking" data-service="4"><span data-i18n="s.order">احجز</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-arrow"/></svg></a></div>
+      </article>
+      <article class="card reveal svc">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><use href="#i-emg"/></svg></div>
+        <h3 data-i18n="s5.t">طوارئ الأسنان</h3>
+        <p data-i18n="s5.d">ألم مفاجئ أو كسر؟ نستقبل حالات الطوارئ بنفس اليوم.</p>
+        <div class="svc-foot"><span class="tag" data-i18n="s5.m">استجابة فورية</span><a class="link" href="#booking" data-service="5"><span data-i18n="s.order">احجز</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-arrow"/></svg></a></div>
+      </article>
+      <article class="card reveal svc">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><use href="#i-user"/></svg></div>
+        <h3 data-i18n="s6.t">طب أسنان الأطفال</h3>
+        <p data-i18n="s6.d">بيئة مريحة للأطفال وطبيبة متخصصة بالتعامل معهم.</p>
+        <div class="svc-foot"><span class="tag" data-i18n="s6.m">حسب العمر</span><a class="link" href="#booking" data-service="6"><span data-i18n="s.order">احجز</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-arrow"/></svg></a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= باقات العناية ================= -->
+<section class="section" id="plans" data-nav="plans">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><svg><use href="#i-shield"/></svg><span data-i18n="plans.eyebrow">باقات واضحة</span></span>
+      <h2 class="statement" data-i18n="plans.t2">اختر باقة العناية التي تناسبك</h2>
+      <p class="lead" data-i18n="plans.lead">اشتراك سنوي يوفّر عليك تكلفة الزيارات المتكررة، بدون رسوم مخفية.</p>
+    </div>
+    <div class="plan-grid">
+      <div class="card reveal plan">
+        <h3 data-i18n="pl1.t">أساسية</h3>
+        <div class="price"><b data-i18n="pl1.p">89</b><span data-i18n="pl1.u">₪ / شهرياً</span></div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"/></svg><span data-i18n="pl1.i1">فحص وتنظيف مرتين سنوياً</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"/></svg><span data-i18n="pl1.i2">أشعة تشخيصية عند الحاجة</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"/></svg><span data-i18n="pl1.i3">خصم 10% على أي علاج إضافي</span></li>
+        </ul>
+        <a class="btn btn-dark btn-block" href="#booking" data-plan="1" data-i18n="pl.cta">ابدأ الباقة</a>
+      </div>
+      <div class="card reveal plan pop">
+        <span class="ribbon" data-i18n="pl2.badge">الأكثر طلباً</span>
+        <h3 data-i18n="pl2.t">متكاملة</h3>
+        <div class="price"><b data-i18n="pl2.p">239</b><span data-i18n="pl2.u">₪ / ربع سنوي</span></div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"/></svg><span data-i18n="pl2.i1">كل ما في الباقة الأساسية</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"/></svg><span data-i18n="pl2.i2">جلسة تبييض واحدة سنوياً</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"/></svg><span data-i18n="pl2.i3">خصم 20% على التقويم والزراعة</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"/></svg><span data-i18n="pl2.i4">أولوية حجز المواعيد</span></li>
+        </ul>
+        <a class="btn btn-signal btn-block" href="#booking" data-plan="2" data-i18n="pl.cta">ابدأ الباقة</a>
+      </div>
+      <div class="card reveal plan">
+        <h3 data-i18n="pl3.t">عائلية</h3>
+        <div class="price"><b data-i18n="pl3.p">799</b><span data-i18n="pl3.u">₪ / سنوياً</span></div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"/></svg><span data-i18n="pl3.i1">تغطية حتى 4 أفراد</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"/></svg><span data-i18n="pl3.i2">فحص أطفال مجاني</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"/></svg><span data-i18n="pl3.i3">خصم 25% على كل العائلة</span></li>
+        </ul>
+        <a class="btn btn-dark btn-block" href="#booking" data-plan="3" data-i18n="pl.cta">ابدأ الباقة</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= الأطباء ================= -->
+<section class="section tint" id="doctors" data-nav="doctors">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><svg><use href="#i-user"/></svg><span data-i18n="doctors.eyebrow">فريقنا</span></span>
+      <h2 class="statement" data-i18n="doctors.t2">أطباء ذوو خبرة يثق بهم مرضانا</h2>
+    </div>
+    <div class="doc-grid">
+      <article class="card reveal doc">
+        <div class="doc-pic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4"><use href="#i-user"/></svg></div>
+        <div><h3 data-i18n="d1.n">د. ليلى حمدان</h3><p class="role" data-i18n="d1.r">تقويم الأسنان</p><p class="yrs" data-i18n="d1.y">خبرة 12 سنة</p></div>
+      </article>
+      <article class="card reveal doc">
+        <div class="doc-pic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4"><use href="#i-user"/></svg></div>
+        <div><h3 data-i18n="d2.n">د. عمر شاهين</h3><p class="role" data-i18n="d2.r">زراعة الأسنان</p><p class="yrs" data-i18n="d2.y">خبرة 15 سنة</p></div>
+      </article>
+      <article class="card reveal doc">
+        <div class="doc-pic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4"><use href="#i-user"/></svg></div>
+        <div><h3 data-i18n="d3.n">د. رنا قاسم</h3><p class="role" data-i18n="d3.r">طب أسنان الأطفال</p><p class="yrs" data-i18n="d3.y">خبرة 8 سنوات</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= خطوات الزيارة: سلسلة إشعارات ================= -->
+<section class="section" id="process" data-nav="">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center;margin-inline:auto">
+      <span class="eyebrow"><svg><use href="#i-clock"/></svg><span data-i18n="process.eyebrow">خطوات بسيطة</span></span>
+      <h2 class="statement" data-i18n="process.t2">زيارتك الأولى في أربع خطوات</h2>
+    </div>
+    <div class="chat">
+      <div class="card reveal bub done"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><use href="#i-check"/></svg></span><span><b data-i18n="st1.t">احجز موعدك</b><span data-i18n="st1.d"> عبر الموقع أو واتساب</span></span><time data-i18n="st1.tm">تأكيد فوري</time></div>
+      <div class="card reveal bub done"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><use href="#i-check"/></svg></span><span><b data-i18n="st2.t">فحص وأشعة</b><span data-i18n="st2.d"> فحص شامل وصور عند الحاجة</span></span><time data-i18n="st2.tm">15 دقيقة</time></div>
+      <div class="card reveal bub"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><use href="#i-clock"/></svg></span><span><b data-i18n="st3.t">خطة علاج مكتوبة</b><span data-i18n="st3.d"> نشرح الخيارات والتكلفة</span></span><time data-i18n="st3.tm">قبل البدء</time></div>
+      <div class="card reveal bub"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><use href="#i-clock"/></svg></span><span><b data-i18n="st4.t">متابعة بعد العلاج</b><span data-i18n="st4.d"> تذكير بمواعيدك القادمة</span></span><time data-i18n="st4.tm">عند الحاجة</time></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= آراء المرضى (نصوص تجريبية: استبدلها بآراء حقيقية) ================= -->
+<section class="section" id="reviews" data-nav="reviews" style="padding-top:0">
+  <div class="wrap">
+    <div class="reviews-panel reveal">
+      <div class="sec-head" style="margin-bottom:2rem">
+        <span class="eyebrow" style="background:rgba(255,255,255,.12);color:#fff"><svg><use href="#i-spark"/></svg><span data-i18n="reviews.eyebrow">تقييمات حقيقية</span></span>
+        <h2 class="statement" data-i18n="reviews.t2">ماذا يقول مرضانا</h2>
+      </div>
+      <div class="quotes">
+        <blockquote class="quote reveal">
+          <div class="qtop"><span class="avatar" data-i18n="r1.i">م</span><div class="stars" role="img" aria-label="5 / 5"><svg viewBox="0 0 24 24" style="--k:0"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17l-6.1 3.4 1.5-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" style="--k:1"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17l-6.1 3.4 1.5-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" style="--k:2"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17l-6.1 3.4 1.5-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" style="--k:3"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17l-6.1 3.4 1.5-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" style="--k:4"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17l-6.1 3.4 1.5-6.8L2.2 9l6.9-.7z"/></svg></div></div>
+          <p data-i18n="r1.q">شرح لي الطبيب كل خيار قبل ما نبدأ، وما حسّيت بألم خلال جلسة الزراعة.</p>
+          <span data-i18n="r1.n" style="color:rgba(255,255,255,.75);font-size:.92rem">محمد ط. – مريض زراعة</span>
+        </blockquote>
+        <blockquote class="quote reveal">
+          <div class="qtop"><span class="avatar" data-i18n="r2.i">ه</span><div class="stars" role="img" aria-label="5 / 5"><svg viewBox="0 0 24 24" style="--k:0"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17l-6.1 3.4 1.5-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" style="--k:1"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17l-6.1 3.4 1.5-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" style="--k:2"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17l-6.1 3.4 1.5-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" style="--k:3"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17l-6.1 3.4 1.5-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" style="--k:4"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17l-6.1 3.4 1.5-6.8L2.2 9l6.9-.7z"/></svg></div></div>
+          <p data-i18n="r2.q">ابني عمره 6 سنوات وكان خايف من طبيب الأسنان، بس الطبيبة تعاملت معه بصبر وطلع مبسوط.</p>
+          <span data-i18n="r2.n" style="color:rgba(255,255,255,.75);font-size:.92rem">هدى ك. – والدة مريض</span>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= عرض ذهبي مميز ================= -->
+<section class="section" style="padding-top:0" data-nav="">
+  <div class="wrap">
+    <div class="offer reveal">
+      <div>
+        <h2 data-i18n="offer.t">عرض التبييض المميز: خصم 30% على التقويم</h2>
+        <p data-i18n="offer.d">لفترة محدودة، احجز استشارة تقويم مجانية واحصل على الخصم فوراً.</p>
+      </div>
+      <a class="btn" href="#booking" data-i18n="offer.btn">احجز الاستشارة</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= الموقع وساعات العمل ================= -->
+<section class="section tint" id="location" data-nav="booking">
+  <div class="wrap loc-grid">
+    <div class="loc-copy">
+      <span class="eyebrow reveal"><svg><use href="#i-clock"/></svg><span data-i18n="loc.eyebrow">قريبون منك</span></span>
+      <h2 class="statement reveal" data-i18n="loc.t2">زرنا أو احجز أونلاين</h2>
+      <p class="lead reveal" data-i18n="loc.lead">موقف سيارات مجاني، ودخول سهل لذوي الاحتياجات الخاصة.</p>
+      <p class="areas-h" data-i18n="loc.hours.h">ساعات العمل</p>
+      <ul class="hours">
+        <li><span data-i18n="h1.d">السبت – الخميس</span><span data-i18n="h1.v">9 ص – 7 م</span></li>
+        <li><span data-i18n="h2.d">الجمعة</span><span data-i18n="h2.v">مغلق</span></li>
+        <li><span data-i18n="h3.d">طوارئ</span><span data-i18n="h3.v">على مدار الساعة</span></li>
+      </ul>
+      <a class="btn btn-dark reveal" id="mapBtn" href="#" target="_blank" rel="noopener" data-i18n="loc.btn">احصل على الاتجاهات</a>
+    </div>
+    <figure class="loc-fig reveal">
+      <span class="ring ring2" aria-hidden="true"></span>
+      <span class="ring ring1" aria-hidden="true"></span>
+      <svg class="pin" viewBox="0 0 60 84" aria-hidden="true">
+        <ellipse cx="30" cy="80" rx="14" ry="3" fill="rgba(0,0,0,.35)"/>
+        <path d="M30 2C14.5 2 2 14.3 2 29.5 2 50 30 78 30 78s28-28 28-48.5C58 14.3 45.5 2 30 2z" style="fill:#fff"/>
+        <circle cx="30" cy="29" r="12" style="fill:var(--gold)"/>
+        <circle cx="30" cy="29" r="5" style="fill:var(--deep)"/>
+      </svg>
+    </figure>
+  </div>
+</section>
+
+<!-- ================= الحجز ================= -->
+<section class="section" id="booking" data-nav="booking">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><svg><use href="#i-check"/></svg><span data-i18n="contact.eyebrow">جاهزون لاستقبالك</span></span>
+      <h2 class="statement" data-i18n="contact.t2">احجز موعدك الآن</h2>
+      <p class="lead" data-i18n="contact.lead">عبّي البيانات وسنؤكد لك الموعد خلال ساعات.</p>
+    </div>
+    <div class="contact-grid">
+      <dl class="card reveal info">
+        <div><dt data-i18n="c.phone">الهاتف</dt><dd><a id="cPhone" href="#" dir="ltr">—</a></dd></div>
+        <div><dt data-i18n="c.wa">واتساب</dt><dd><a id="cWa" href="#" target="_blank" rel="noopener" dir="ltr">—</a></dd></div>
+        <div><dt data-i18n="c.email">البريد</dt><dd><a id="cMail" href="#" dir="ltr">—</a></dd></div>
+        <div><dt data-i18n="c.addr">العنوان</dt><dd data-i18n="c.addr.v">المدينة – الشارع الرئيسي – مبنى 0</dd></div>
+      </dl>
+
+      <form class="card reveal form" id="quoteForm" novalidate>
+        <div class="field">
+          <label for="fName" data-i18n="f.name">الاسم</label>
+          <input id="fName" name="name" type="text" autocomplete="name" required data-i18n-ph="f.name.ph" placeholder="اسمك الكامل">
+        </div>
+        <div class="field">
+          <label for="fPhone" data-i18n="f.phone">رقم الهاتف</label>
+          <input id="fPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required dir="ltr" placeholder="05X XXX XXXX" style="text-align:start">
+        </div>
+        <div class="field">
+          <label for="fService" data-i18n="f.service">الخدمة المطلوبة</label>
+          <select id="fService" name="service" required>
+            <option value="" disabled selected data-i18n="f.choose">اختر الخدمة</option>
+            <option value="1" data-i18n="s1.t">تنظيف وفحص دوري</option>
+            <option value="2" data-i18n="s2.t">تبييض الأسنان</option>
+            <option value="3" data-i18n="s3.t">تقويم الأسنان</option>
+            <option value="4" data-i18n="s4.t">زراعة الأسنان</option>
+            <option value="5" data-i18n="s5.t">طوارئ الأسنان</option>
+            <option value="6" data-i18n="s6.t">طب أسنان الأطفال</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="fMsg" data-i18n="f.msg">ملاحظات إضافية</label>
+          <textarea id="fMsg" name="msg" data-i18n-ph="f.msg.ph" placeholder="الوقت المفضّل، أعراض تعاني منها…"></textarea>
+        </div>
+        <button class="btn btn-signal btn-block" type="submit" data-i18n="f.send">أرسل طلب الحجز عبر واتساب</button>
+        <p class="form-note" id="formNote" role="status" data-i18n="f.note">سيفتح واتساب برسالة جاهزة تُرسلها للعيادة مباشرة.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <span data-i18n="footer.rights">© 2026 عيادة الابتسامة لطب الأسنان. جميع الحقوق محفوظة.</span>
+    <!-- رابط الاعتماد اختياري: احذف السطر التالي عند تسليم الموقع للعميل إن أردت -->
+    <a href="https://ahmedshawqi.store" target="_blank" rel="noopener" data-i18n="footer.credit">تصميم وتطوير: Ahmed Shawqi</a>
+  </div>
+</footer>
+
+<script>
+/* ==========================================================
+   إعدادات العميل: عدّل هذه القيم فقط لكل عميل جديد
+   ========================================================== */
+var CONFIG = {
+  phone: "+970500000000",
+  phoneDisplay: "+970 50 000 0000",
+  whatsapp: "970500000000",
+  email: "info@example.com",
+  mapUrl: "https://maps.google.com/",
+  logo: "",   // مثال: "media/logo.png" (يفضّل PNG شفاف مربّع). فارغ = الرمز الافتراضي
+
+  /* شريط الأرقام. تنبيه: كل الأرقام أدناه أمثلة تجريبية فقط، استبدلها بأرقام حقيقية قبل النشر */
+  ticker: [
+    { ar:"مريض تمت معالجته", en:"Patients treated", v:"9,300+" },
+    { ar:"طبيب متخصص", en:"Specialist dentists", v:"6" },
+    { ar:"نسبة رضا المرضى", en:"Patient satisfaction", v:"98%" },
+    { ar:"سنوات خبرة العيادة", en:"Years in practice", v:"11" },
+    { ar:"حالة طوارئ استُقبلت هذا الشهر", en:"Emergencies seen this month", v:"42" },
+    { ar:"زراعة أسنان ناجحة", en:"Successful implants", v:"1,150+" },
+    { ar:"تقييم Google", en:"Google rating", v:"4.9/5" }
+  ]
+};
+
+/* الترجمة الإنجليزية. النص العربي موجود مباشرة في الصفحة أعلاه */
+var EN = {
+  "meta.title":"Al-Ibtisama Dental Clinic",
+  "brand.name":"Al-Ibtisama","brand.sub":"Dental Clinic",
+  "nav.label":"Main menu",
+  "nav.services":"Services","nav.plans":"Plans","nav.doctors":"Doctors","nav.reviews":"Reviews","nav.booking":"Book now",
+  "cta.book":"Book an appointment","wa.float":"WhatsApp",
+  "tk.label":"By the numbers","tk.aria":"Clinic figures","tk.pause":"Pause motion","tk.play":"Play motion",
+  "hero.eyebrow":"Accredited clinic since 2014",
+  "hero.title":"Your smile deserves real care",
+  "hero.sub":"Cleaning, whitening, orthodontics and implants with the latest equipment, and a team that explains every step first.",
+  "hero.cta2":"Browse services",
+  "hero.trust":"4.9 rating from real patients",
+  "hero.b1":"Full sterilization","hero.b2":"Pain-free",
+  "f1.l":"Patients treated","f1.v":"9,300+",
+  "f2.l":"Specialist team","f2.v":"6 dentists",
+  "f3.l":"Patient satisfaction","f3.v":"98%",
+  "f4.l":"Emergency care","f4.v":"24/7",
+  "sys.eyebrow":"Care system",
+  "sys.t2":"Everything your teeth need, in one circle",
+  "sys.lead":"From routine checkups to implants and orthodontics, one team follows you with a clear treatment plan from the first visit.",
+  "cl.b1":"Daily care","cl.b2":"Cosmetic","cl.b3":"Treatment",
+  "tri1":"Precise diagnosis with digital X-rays",
+  "tri2":"A written treatment plan before we start",
+  "tri3":"Follow-up after every procedure",
+  "sys.btn":"Discover services",
+  "services.eyebrow":"Our services",
+  "services.t2":"Everything your teeth need, clearly planned",
+  "services.lead":"Pick what you need and we will book a free initial checkup.",
+  "s.order":"Book",
+  "s1.t":"Cleaning & checkup","s1.d":"Tartar removal, polishing and a full checkup twice a year.","s1.m":"30 – 45 min",
+  "s2.t":"Teeth whitening","s2.d":"Safe in-clinic whitening or an at-home kit under supervision.","s2.m":"Session – 2 weeks",
+  "s3.t":"Orthodontics","s3.d":"Metal or clear braces depending on your case, with monthly visits.","s3.m":"12 – 24 months",
+  "s4.t":"Dental implants","s4.d":"A replacement for a missing tooth with a written warranty.","s4.m":"3 – 6 months",
+  "s5.t":"Dental emergencies","s5.d":"Sudden pain or a broken tooth? Seen the same day.","s5.m":"Immediate response",
+  "s6.t":"Pediatric dentistry","s6.d":"A comfortable setting and a dentist specialized with children.","s6.m":"By age",
+  "plans.eyebrow":"Clear plans",
+  "plans.t2":"Choose the care plan that fits you",
+  "plans.lead":"An annual membership that saves on recurring visits, with no hidden fees.",
+  "pl1.t":"Basic","pl1.p":"89","pl1.u":"₪ / month",
+  "pl1.i1":"Checkup & cleaning twice a year","pl1.i2":"Diagnostic X-rays when needed","pl1.i3":"10% off any extra treatment",
+  "pl2.badge":"Most popular","pl2.t":"Complete","pl2.p":"239","pl2.u":"₪ / quarter",
+  "pl2.i1":"Everything in Basic","pl2.i2":"One whitening session a year","pl2.i3":"20% off braces and implants","pl2.i4":"Priority booking",
+  "pl3.t":"Family","pl3.p":"799","pl3.u":"₪ / year",
+  "pl3.i1":"Covers up to 4 people","pl3.i2":"Free checkup for kids","pl3.i3":"25% off for the whole family",
+  "pl.cta":"Start this plan",
+  "doctors.eyebrow":"Our team","doctors.t2":"Experienced dentists our patients trust",
+  "d1.n":"Dr. Layla Hamdan","d1.r":"Orthodontics","d1.y":"12 years of experience",
+  "d2.n":"Dr. Omar Shaheen","d2.r":"Dental implants","d2.y":"15 years of experience",
+  "d3.n":"Dr. Rana Qasem","d3.r":"Pediatric dentistry","d3.y":"8 years of experience",
+  "process.eyebrow":"Simple steps","process.t2":"Your first visit in four steps",
+  "st1.t":"Book your slot","st1.d":" on the website or WhatsApp","st1.tm":"Instant confirmation",
+  "st2.t":"Checkup & X-ray","st2.d":" a full exam and images if needed","st2.tm":"15 minutes",
+  "st3.t":"A written treatment plan","st3.d":" we explain the options and cost","st3.tm":"Before starting",
+  "st4.t":"Follow-up care","st4.d":" a reminder for your upcoming visits","st4.tm":"When needed",
+  "reviews.eyebrow":"Real ratings","reviews.t2":"What our patients say",
+  "r1.q":"The dentist explained every option before we started, and I felt no pain during the implant session.",
+  "r1.n":"Mohammed T. – implant patient","r1.i":"M",
+  "r2.q":"My 6-year-old was scared of the dentist, but she was patient with him and he left happy.",
+  "r2.n":"Huda K. – parent","r2.i":"H",
+  "offer.t":"Whitening special: 30% off orthodontics",
+  "offer.d":"For a limited time, book a free orthodontic consultation and get the discount instantly.",
+  "offer.btn":"Book the consultation",
+  "loc.eyebrow":"Close to you","loc.t2":"Visit us or book online",
+  "loc.lead":"Free parking, and easy access for people with disabilities.",
+  "loc.hours.h":"Working hours",
+  "h1.d":"Saturday – Thursday","h1.v":"9 am – 7 pm",
+  "h2.d":"Friday","h2.v":"Closed",
+  "h3.d":"Emergencies","h3.v":"24/7",
+  "loc.btn":"Get directions",
+  "contact.eyebrow":"Ready to see you","contact.t2":"Book your appointment now",
+  "contact.lead":"Fill in your details and we will confirm within hours.",
+  "c.phone":"Phone","c.wa":"WhatsApp","c.email":"Email","c.addr":"Address",
+  "c.addr.v":"City – Main Street – Building 0",
+  "f.name":"Name","f.name.ph":"Your full name",
+  "f.phone":"Phone number",
+  "f.service":"Service needed","f.choose":"Choose a service",
+  "f.msg":"Additional notes","f.msg.ph":"Preferred time, symptoms…",
+  "f.send":"Send booking request on WhatsApp",
+  "f.note":"WhatsApp will open with a ready message that you send to the clinic directly.",
+  "f.err":"Please fill in your name, phone number and service.",
+  "footer.rights":"© 2026 Al-Ibtisama Dental Clinic. All rights reserved.",
+  "footer.credit":"Design and development: Ahmed Shawqi"
+};
+
+(function(){
+  var AR = {}, AR_ARIA = {}, AR_PH = {};
+  var state = { lang: "ar" };
+  var root = document.documentElement;
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function $(id){ return document.getElementById(id); }
+
+  document.querySelectorAll("[data-i18n]").forEach(function(el){
+    var k = el.getAttribute("data-i18n");
+    if(!(k in AR)) AR[k] = el.innerHTML;
+  });
+  document.querySelectorAll("[data-i18n-aria]").forEach(function(el){
+    var k = el.getAttribute("data-i18n-aria");
+    if(!(k in AR_ARIA)) AR_ARIA[k] = el.getAttribute("aria-label");
+  });
+  document.querySelectorAll("[data-i18n-ph]").forEach(function(el){
+    var k = el.getAttribute("data-i18n-ph");
+    if(!(k in AR_PH)) AR_PH[k] = el.getAttribute("placeholder");
+  });
+  AR["meta.title"] = document.title;
+  AR["f.err"] = "يرجى تعبئة الاسم ورقم الهاتف والخدمة.";
+  AR["tk.pause"] = "إيقاف الحركة"; AR["tk.play"] = "تشغيل الحركة";
+
+  function t(k){ return state.lang === "ar" ? AR[k] : EN[k]; }
+
+  if(CONFIG.logo){
+    var img = $("brandImg"); img.src = CONFIG.logo; img.hidden = false;
+    $("brandMark").style.display = "none";
+  }
+
+  var track = $("tickerTrack"), view = $("tickerView"), ticker = $("ticker"), toggle = $("tickToggle");
+  function renderTicker(){
+    var lang = state.lang;
+    var html = CONFIG.ticker.map(function(x){
+      var u = x["u" + lang];
+      return '<span class="tk-item"><span class="tk-label">' + x[lang] + '</span><b class="tk-val">' + x.v + (u ? ' <small>' + u + '</small>' : '') + '</b></span>';
+    }).join("");
+    track.innerHTML = '<div class="tk-group">' + html + '</div>';
+    var g = track.firstChild, need = view.clientWidth * 1.15, reps = 1;
+    while(g.scrollWidth * reps < need && reps < 8) reps++;
+    if(reps > 1) g.innerHTML = html.repeat(reps);
+    var clone = g.cloneNode(true); clone.setAttribute("aria-hidden", "true"); track.appendChild(clone);
+    track.style.setProperty("--tick-dur", Math.max(24, g.scrollWidth / 70) + "s");
+  }
+  function updateToggle(){
+    var paused = ticker.classList.contains("paused");
+    toggle.setAttribute("aria-pressed", paused ? "true" : "false");
+    toggle.setAttribute("aria-label", paused ? t("tk.play") : t("tk.pause"));
+  }
+  toggle.addEventListener("click", function(){ ticker.classList.toggle("paused"); updateToggle(); });
+
+  function setLang(l){
+    state.lang = l;
+    root.lang = l;
+    root.dir = l === "ar" ? "rtl" : "ltr";
+    document.querySelectorAll("[data-i18n]").forEach(function(el){
+      var v = t(el.getAttribute("data-i18n"));
+      if(v !== undefined) el.innerHTML = v;
+    });
+    document.querySelectorAll("[data-i18n-aria]").forEach(function(el){
+      var k = el.getAttribute("data-i18n-aria");
+      var v = l === "ar" ? AR_ARIA[k] : EN[k];
+      if(v) el.setAttribute("aria-label", v);
+    });
+    document.querySelectorAll("[data-i18n-ph]").forEach(function(el){
+      var k = el.getAttribute("data-i18n-ph");
+      var v = l === "ar" ? AR_PH[k] : EN[k];
+      if(v) el.setAttribute("placeholder", v);
+    });
+    document.title = t("meta.title");
+    var btn = $("lang");
+    btn.textContent = l === "ar" ? "EN" : "عربي";
+    btn.setAttribute("aria-label", l === "ar" ? "English" : "العربية");
+    renderTicker(); updateToggle();
+    requestAnimationFrame(moveInd);
+    try{ localStorage.setItem("lang", l); }catch(e){}
+  }
+
+  var cPhone = $("cPhone"); cPhone.textContent = CONFIG.phoneDisplay; cPhone.href = "tel:" + CONFIG.phone;
+  var cWa = $("cWa"); cWa.textContent = CONFIG.phoneDisplay; cWa.href = "https://wa.me/" + CONFIG.whatsapp;
+  var cMail = $("cMail"); cMail.textContent = CONFIG.email; cMail.href = "mailto:" + CONFIG.email;
+  $("waFloat").href = "https://wa.me/" + CONFIG.whatsapp;
+  $("mapBtn").href = CONFIG.mapUrl;
+
+  $("lang").addEventListener("click", function(){ setLang(state.lang === "ar" ? "en" : "ar"); });
+
+  var burger = $("burger"), nav = $("nav");
+  burger.addEventListener("click", function(){
+    var open = nav.classList.toggle("open");
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  nav.addEventListener("click", function(e){
+    if(e.target.tagName === "A"){ nav.classList.remove("open"); burger.setAttribute("aria-expanded", "false"); }
+  });
+
+  var header = $("siteHeader"), ind = $("navInd");
+  var navLinks = [].slice.call(document.querySelectorAll(".nav a[data-nav]"));
+  var navSections = [].slice.call(document.querySelectorAll("section[data-nav]"));
+  var activeKey = null, ticking = false;
+  function moveInd(){
+    var a = document.querySelector(".nav a.active");
+    if(!a || getComputedStyle(ind).display === "none"){ ind.style.opacity = 0; return; }
+    ind.style.left = a.offsetLeft + "px"; ind.style.width = a.offsetWidth + "px"; ind.style.opacity = 1;
+  }
+  function onScroll(){
+    ticking = false;
+    var y = window.pageYOffset || 0;
+    header.classList.toggle("scrolled", y > 30);
+    var cur = "";
+    navSections.forEach(function(s){
+      if(s.getAttribute("data-nav") && s.getBoundingClientRect().top <= window.innerHeight * 0.4) cur = s.getAttribute("data-nav");
+    });
+    if(y < 200) cur = "";
+    if(cur !== activeKey){
+      activeKey = cur;
+      navLinks.forEach(function(a){ a.classList.toggle("active", a.getAttribute("data-nav") === cur); });
+      moveInd();
+    }
+  }
+  window.addEventListener("scroll", function(){ if(!ticking){ ticking = true; requestAnimationFrame(onScroll); } }, {passive:true});
+  window.addEventListener("resize", function(){ moveInd(); renderTicker(); });
+
+  var sel = $("fService");
+  document.querySelectorAll("[data-service]").forEach(function(a){
+    a.addEventListener("click", function(){ sel.value = a.getAttribute("data-service"); });
+  });
+  document.querySelectorAll("[data-plan]").forEach(function(a){
+    a.addEventListener("click", function(){ $("fMsg").value = (state.lang === "ar" ? "مهتم بباقة: " : "Interested in plan: ") + a.closest(".plan").querySelector("h3").textContent; });
+  });
+
+  var form = $("quoteForm"), note = $("formNote");
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var fName = $("fName"), fPhone = $("fPhone"), fMsg = $("fMsg");
+    var name = fName.value.trim(), phone = fPhone.value.trim(), msg = fMsg.value.trim();
+    var badPhone = phone.replace(/\D/g, "").length < 7;
+    if(!name || badPhone || !sel.value){
+      note.textContent = t("f.err"); note.style.color = "#B3261E";
+      (!name ? fName : (badPhone ? fPhone : sel)).focus();
+      return;
+    }
+    note.style.color = ""; note.textContent = t("f.note");
+    var svc = sel.options[sel.selectedIndex].text, text;
+    if(state.lang === "ar"){
+      text = "مرحباً، أنا " + name + ".\nأريد حجز موعد لخدمة: " + svc + "." + (msg ? "\nملاحظات: " + msg : "") + "\nرقم التواصل: " + phone;
+    }else{
+      text = "Hello, I am " + name + ".\nI would like to book: " + svc + "." + (msg ? "\nNotes: " + msg : "") + "\nContact number: " + phone;
+    }
+    window.open("https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(text), "_blank", "noopener");
+  });
+
+  var groups = new Map();
+  var revs = [].slice.call(document.querySelectorAll(".reveal"));
+  revs.forEach(function(el){
+    var p = el.parentNode, n = groups.get(p) || 0; groups.set(p, n + 1);
+    el.style.setProperty("--d", Math.min(n, 6) * 90 + "ms");
+  });
+  function countUp(el){
+    if(el.dataset.done) return; el.dataset.done = "1";
+    var txt = el.textContent, m = txt.match(/[\d][\d,]*(\.\d+)?/);
+    if(!m || reduce) return;
+    var target = parseFloat(m[0].replace(/,/g, "")), hasComma = m[0].indexOf(",") > -1, t0 = null, dur = 1400;
+    function fmt(v){ var s = Math.round(v).toString(); return hasComma ? s.replace(/\B(?=(\d{3})+(?!\d))/g, ",") : s; }
+    function step(ts){
+      if(t0 === null) t0 = ts;
+      var p = Math.min(1, (ts - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = txt.replace(m[0], fmt(target * e));
+      if(p < 1) requestAnimationFrame(step); else el.textContent = txt;
+    }
+    requestAnimationFrame(step);
+  }
+  function show(el){
+    el.classList.add("in");
+    if(el.classList.contains("count")) countUp(el);
+    el.querySelectorAll(".count").forEach(countUp);
+  }
+  if(reduce || !("IntersectionObserver" in window)){
+    revs.forEach(function(el){ el.classList.add("in"); });
+  }else{
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ show(e.target); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+    revs.forEach(function(el){ io.observe(el); });
+  }
+
+  var saved = null;
+  try{ saved = localStorage.getItem("lang"); }catch(e){}
+  if(saved === "en") setLang("en"); else { renderTicker(); updateToggle(); }
+  onScroll();
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ renderTicker(); moveInd(); });
+})();
+</script>
+</body>
+</html>
